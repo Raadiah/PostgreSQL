@@ -21,7 +21,7 @@ PostgreSQL, also known as Postgres, is an open source object-relational DBMS and
 
 ## Connecting to DB Server
 If database_name is an already created database then the following command is used to connect to the database.
-\c database_name
+```\c database_name```
 
 ## Storing, manipulating and retrieving database:
 We are going to use an art store database already designed in [here](https://github.com/Radhima/Art-Store-Database) as a demo. The database in that link is created on Oracle DBMS. Here, a PostgreSQL version of the same database is used.
@@ -35,6 +35,8 @@ Then the user should be connected to the database in the way mentioned above.
 
 ### Tables
 Databases are made of tables. Each table is an entity. We don’t want all the information in a simple table as they will be hard to retrieve and manipulate. Rather the tables are created in object redundant form.  A table have rows and columns. Here columns are the features of a single entity while row is an entity itself. To create a table feature-names are added. The command for creating table is 
+
+```
     CREATE TABLE TABLE_NAME(
     COL_NAME_1 DATA_TYPE CONSTRAINTS_IF_ANY,
       ...,
@@ -43,6 +45,8 @@ Databases are made of tables. Each table is an entity. We don’t want all the i
     COL_NAME_N DATA_TYPE CONSTRAINTS_IF_ANY,
     )
     ;
+```
+
 Additional Constraints can be added on the table columns. The example of additional constraints are: not null, unique, primary key, foreign key etc.
 While inserting data on the table if constraints are not met, then an error message will generate.
 
@@ -50,7 +54,7 @@ The SQL command from [here](https://github.com/Radhima/PostgreSQL/blob/master/ta
 ![Table creation using constraints](https://user-images.githubusercontent.com/28762555/89861135-dadac780-dbc6-11ea-8b14-a6a8bbd6ce27.png)
 
 Then if we want to see the created tables we use the command:
-    /d
+    ```/d```
 
 The resultant output is:
 ![Tables](https://user-images.githubusercontent.com/28762555/89862146-27270700-dbc9-11ea-94fa-a779f9fec1d5.png)
