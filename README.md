@@ -56,9 +56,21 @@ The SQL command from [here](https://github.com/Radhima/PostgreSQL/blob/master/ta
 Then if we want to see the created tables we use the command:
     ```/d```
 
-The resultant output is:
+The resultant output when the above commands are inserted is shown here:
 ![Tables](https://user-images.githubusercontent.com/28762555/89862146-27270700-dbc9-11ea-94fa-a779f9fec1d5.png)
     
 
 ### Inserting in a table
-(to be updated later)
+To insert in a table the syntax to be used is:
+
+```
+INSERT INTO TABLE_NAME(
+COLUMN_NAMES_SEPARATED_BY_COMMAS) 
+VALUES (
+VALUE_OF_COLUMNS_IN_SAME_ORDER)
+;
+```
+
+Here, we see we may not add all columns to insert values. But not null constraints must be maintained. Again we can write column names in any order but values should be in same order as columns. We are using the demo values in [here](https://github.com/Radhima/PostgreSQL/blob/master/insert.sql) for the insertion. An example for the shipping table is shown below:
+
+![Insert output](https://user-images.githubusercontent.com/28762555/89864300-89820680-dbcd-11ea-828e-ea844eb6cdec.png)
