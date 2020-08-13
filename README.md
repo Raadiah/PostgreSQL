@@ -73,7 +73,7 @@ We are going to use an art store database already designed in [here](https://git
 To create a database, the 
 
 ```
-CREATE DATABASE;
+CREATE DATABASE DATABASE_NAME;
 ```
 command is passed. (Note to add semi-colon, otherwise the command will not be executed.) 
 
@@ -218,6 +218,45 @@ Here, ```HAVING``` is used to filter necessary records for better retrieval.:
 
 REMEMBER, TO USE A COLUMN IN SELECT, YOU MUST HAVE THEM IN GROUP BY CLAUSE OR USE THEM WITHIN AGGREGATE FUNCTION
 
+#### Joining two tables
+
+Postgres is an object-realtional DBMS. Here, two tables may have a relation between them. We can join these two tables based on the relation. The ```JOIN``` clause used in the command joins the two tables based on a column which has foreign key references between the two tables. Join can be differenct types. These are:
+
+* Inner join
+* Left join
+* Right join
+* Full join
+
+###### Inner Join
+
+In this type of join, only the records that has the foreign key value for both the tables are retrieved. The command for this type of join is:
+
+```
+    SELECT COLUMNS_FROM_BOTH_TABLES,
+    FROM TABLE_NAME1
+    JOIN TABLE_NAME2
+    ON FOREIGN_KEY_OF_TABLE1 = CORRESPONDING_FOREIGN_KEY_OF_TABLE2;
+```
+
+By default, ```JOIN``` is an inner join. An example is shown below:
+
+![ecample1](https://user-images.githubusercontent.com/28762555/90132122-0dcfb780-dd8f-11ea-906d-4ac9c6e94be6.png)
+
+###### Left Join
+
+In this type of join, all records from the left table joined with right table are retrieved. Where record for right table is nil, is kept blank. An example is:
+
+![example2](https://user-images.githubusercontent.com/28762555/90135674-d6fca000-dd94-11ea-908e-d51baffc0a6d.png)
+
+Here, `left` keyword is added. We see, null values for table products joining c_order is shown here.
+
+###### Right Join
+
+This is similar to Left Join. Here, all records from the right table joined with left table are retrieved. Where record for left table is nil, is kept blank. `RIGHT` keyword is used here.
+
+###### Full Join
+
+In this type of join, all records from both the tables are retrieved. Here `Full` keyword is used.
 
 ## Conclusion
 There is a far lot to learn. You can use the [official documentation](https://www.postgresql.org/docs/) page for further learning. The best way to learn is to start is by getting into the mud. So, start by now! ^_^ 
