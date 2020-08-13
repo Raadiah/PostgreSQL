@@ -121,6 +121,10 @@ Here, we see we may not add all columns to insert values. But not null constrain
 
 ![Insert output](https://user-images.githubusercontent.com/28762555/89914576-04bbda80-dc17-11ea-83c9-b19d259a5025.png)
 
+
+### Manipulating a database
+
+
 ### Retrieving from a database
 To retrieve from a database we use ``` SELECT``` command. The command with other conditions can successfully retrieve the required data. These are described below:
 
@@ -227,9 +231,7 @@ Postgres is an object-realtional DBMS. Here, two tables may have a relation betw
 * Right join
 * Full join
 
-###### Inner Join
-
-In this type of join, only the records that has the foreign key value for both the tables are retrieved. The command for this type of join is:
+**Inner Join**: In this type of join, only the records that has the foreign key value for both the tables are retrieved. The command for this type of join is:
 
 ```
     SELECT COLUMNS_FROM_BOTH_TABLES,
@@ -242,21 +244,32 @@ By default, ```JOIN``` is an inner join. An example is shown below:
 
 ![ecample1](https://user-images.githubusercontent.com/28762555/90132122-0dcfb780-dd8f-11ea-906d-4ac9c6e94be6.png)
 
-###### Left Join
-
-In this type of join, all records from the left table joined with right table are retrieved. Where record for right table is nil, is kept blank. An example is:
+**Left Join:** In this type of join, all records from the left table joined with right table are retrieved. Where record for right table is nil, is kept blank. An example is:
 
 ![example2](https://user-images.githubusercontent.com/28762555/90135674-d6fca000-dd94-11ea-908e-d51baffc0a6d.png)
 
 Here, `left` keyword is added. We see, null values for table products joining c_order is shown here.
 
-###### Right Join
+**Right Join:** This is similar to Left Join. Here, all records from the right table joined with left table are retrieved. Where record for left table is nil, is kept blank. `RIGHT` keyword is used here.
 
-This is similar to Left Join. Here, all records from the right table joined with left table are retrieved. Where record for left table is nil, is kept blank. `RIGHT` keyword is used here.
+**Full Join:** In this type of join, all records from both the tables are retrieved. Here `Full` keyword is used.
 
-###### Full Join
+#### Aggregate Functions
 
-In this type of join, all records from both the tables are retrieved. Here `Full` keyword is used.
+We have already seen an example of ```COUNT(*)``` before. This is an example of aggregate function. PostgreSQL has several more such functions which makes better retrieval of data based on calculations. A table of the aggregrate functions are given below:
+
+
+
+| Function       | Description   | 
+| :---------------------: | :------------------------------------------------------: |
+| avg(expression)    | the average of all non-null input values |
+| count(*)     | 	number of input rows    |
+| max(expression) | returns maximum of input values   |
+| min(expression) | returns minimum of input values   |
+| sum(expression) | Sum of all not null input values  |
+
+
+
 
 ## Conclusion
 There is a far lot to learn. You can use the [official documentation](https://www.postgresql.org/docs/) page for further learning. The best way to learn is to start is by getting into the mud. So, start by now! ^_^ 
