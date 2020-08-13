@@ -1,6 +1,6 @@
 # Overview of PostgreSQL
 
-This is an overview and documentation of PostgreSQL database management system.
+PostgreSQL is one of the most used open-source DBMS and extremely popular for its features. This is a handnote overview and documentation of PostgreSQL database management system for anyone who wants to start his journey with PostgreSQL. 
 
 ## What is a database?
 
@@ -17,10 +17,49 @@ PostgreSQL, also known as Postgres, is an open source object-relational DBMS and
 
 ## Windows Installation:
 
-(Updating later)
+Download the windows installer for postgres form [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). You can choose the latest stable version from here. The installer will guide to install postgres.
+
+## Create roles:
+
+To create a new role type the command:
+```
+CREATE ROLE role_name WITH OPTIONS
+
+```
+Here, options can be 
+
+```
+    SUPERUSER | NOSUPERUSER
+    | CREATEDB | NOCREATEDB
+    | CREATEROLE | NOCREATEROLE
+    | CREATEUSER | NOCREATEUSER
+    | INHERIT | NOINHERIT
+    | LOGIN | NOLOGIN
+    | CONNECTION LIMIT connlimit
+    | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'password'
+    | VALID UNTIL 'timestamp' 
+    | IN ROLE rolename [, ...]
+    | IN GROUP rolename [, ...]
+    | ROLE rolename [, ...]
+    | ADMIN rolename [, ...]
+    | USER rolename [, ...]
+    | SYSID uid 
+    
+```
+If ```login``` option is not given, the role is not permitted to login. Similarly, other options give permission of the features to the roles.
 
 ## Connecting to DB Server
-If database_name is an already created database then the following command is used to connect to the database.
+
+From Command Prompt an user can connect with the following command:
+
+```
+psql -d 'database_name' -U 'user_name'
+
+```
+
+DON'T FORGET TO ADD THE BIN PATH OF POSTGRES TO ENVIRONMENT PATH VARIABLE IN ORDER TO RUN ```psql``` COMMAND FROM COMMAND PROMPT!
+
+If already connected to a user then the following command can be used to connect to the database.
 ```
 \c database_name
 ```
@@ -154,3 +193,6 @@ The output for art store database is:
 The ```distinct``` keyword is used for this.
 
 ![distinct](https://user-images.githubusercontent.com/28762555/89909834-52354900-dc11-11ea-9a99-33eb31e00714.png)
+
+## Conclusion
+There is a far lot to learn. You can use the [official documentation](https://www.postgresql.org/docs/) page for further learning. The best way to learn is to start is by getting into the mud. So, start by now! ^_^ 
