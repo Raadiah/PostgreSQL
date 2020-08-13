@@ -48,6 +48,16 @@ Here, options can be
 ```
 If ```login``` option is not given, the role is not permitted to login. Similarly, other options give permission of the features to the roles.
 
+For adding password separately the following command can be used:
+
+```
+\password USER_NAME
+
+```
+Then password and confirmation of password will be asked. Note that, whatever you type in the command will not be shown. The same command can be used for password update as well.
+
+![login](https://user-images.githubusercontent.com/28762555/90152786-08339b00-ddaa-11ea-8da4-9351f3c49e03.png)
+
 ## Connecting to DB Server
 
 From Command Prompt an user can connect with the following command:
