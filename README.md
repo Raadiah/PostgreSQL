@@ -97,7 +97,7 @@ Additional Constraints can be added on the table columns. The example of additio
 While inserting data on the table if constraints are not met, then an error message will generate.
 
 The SQL command from [here](https://github.com/Radhima/PostgreSQL/blob/master/tables.sql) was inserted to get the following output:
-![Table creation using constraints](https://user-images.githubusercontent.com/28762555/89861135-dadac780-dbc6-11ea-8b14-a6a8bbd6ce27.png)
+![Table creation using constraints](https://user-images.githubusercontent.com/28762555/90130658-a6186d00-dd8c-11ea-8d01-d70e4b828c05.png)
 
 Then if we want to see the created tables we use the command:
     ```/d```
@@ -193,6 +193,31 @@ The output for art store database is:
 The ```distinct``` keyword is used for this.
 
 ![distinct](https://user-images.githubusercontent.com/28762555/89909834-52354900-dc11-11ea-9a99-33eb31e00714.png)
+
+#### Retrieving grouped records with ```GROUP BY``` and ```GROUP BY... HAVING```
+
+The  ```GROUP BY``` and ```GROUP BY... HAVING``` keywords are used to select distinct elements grouped together in a column so that we can have aggregate functions on other columns to retrieve different values like- how many records, maximum, minimum of any record or sum of the records etc.
+
+The query for this command is:
+
+``` 
+SELECT COLUMN_NAMES, AGGREGATE_FUNCTION(COLUMN_NAMES) 
+FROM TABLE_NAME
+GROUP_BY COLUMN_NAME
+HAVING CONDITION;
+
+```
+Here, ```HAVING``` is used to filter necessary records for better retrieval.:
+
+###### Two examples using ``` GROUP BY ``` clause are:
+![example](https://user-images.githubusercontent.com/28762555/90130649-a44ea980-dd8c-11ea-94ca-51b002754546.png)
+![example2](https://user-images.githubusercontent.com/28762555/90130653-a4e74000-dd8c-11ea-9017-dfdb5a0c5b7c.png)
+
+###### In this example we add having filter using ```GROUP BY ... HAVING ```:
+![example](https://user-images.githubusercontent.com/28762555/90130646-a31d7c80-dd8c-11ea-8bcc-5adc85e7a7f4.png)
+
+REMEMBER, TO USE A COLUMN IN SELECT, YOU MUST HAVE THEM IN GROUP BY CLAUSE OR USE THEM WITHIN AGGREGATE FUNCTION
+
 
 ## Conclusion
 There is a far lot to learn. You can use the [official documentation](https://www.postgresql.org/docs/) page for further learning. The best way to learn is to start is by getting into the mud. So, start by now! ^_^ 
