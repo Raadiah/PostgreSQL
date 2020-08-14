@@ -63,9 +63,21 @@ Then password and confirmation of password will be asked. Note that, whatever yo
 From Command Prompt an user can connect with the following command:
 
 ```
-psql -d 'database_name' -U 'user_name'
+psql -d database_name -U user_name
 
 ```
+
+![connect1](https://user-images.githubusercontent.com/28762555/90221826-b54ef780-de2c-11ea-92c3-0357f8ebcdea.png)
+
+For remote login, host and port should also be given:
+
+```
+
+psql -h host_name -p port_name -U user_name database_name
+
+```
+
+![connect](https://user-images.githubusercontent.com/28762555/90221385-f09cf680-de2b-11ea-98a1-fcbd67ac711c.png)
 
 DON'T FORGET TO ADD THE BIN PATH OF POSTGRES TO ENVIRONMENT PATH VARIABLE IN ORDER TO RUN ```psql``` COMMAND FROM COMMAND PROMPT!
 
@@ -280,6 +292,36 @@ We have already seen an example of ```COUNT(*)``` before. This is an example of 
 
 
 
+## Some Important Notes:
+
+* AND has higher precedence over OR operator. Use round braces if OR operator should be executed first
+* Precedence  is left-associative
+* String values of a record are to be quoted with single quote
+* For database names with spaces, don't forget to quote them while connecting!
+* Table and relation words are used interchangeably
+
+
+## Some helpful psql commands:
+
+| Command       | Description   | 
+| :---------------------: | :------------------------------------------------------: |
+| help   | Lists important commands |
+| \?     | 	Lists all psql commands    |
+| \password ROLE_NAME |  for setting or changing password  |
+| \l |  Lists all databases  |
+| \d |  Lists all relations in a database  |
+| \d TABLE_NAME |  Gives description of a relation  |
+| \c DATABASE_NAME |  Connects to a database  |
+| \i *file_name* |  Reads command from a file  |
+| \o *file_name* |  Writes output to a file  |
+| \x |  switch expanded display mode to on/off |
+| \q |  quits psql connection  |
+
+
+## References:
+
+* [Official Documentation](https://www.postgresql.org/docs/)
+* [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
 
 ## Conclusion
 There is a far lot to learn. You can use the [official documentation](https://www.postgresql.org/docs/) page for further learning. The best way to learn is to start is by getting into the mud. So, start by now! ^_^ 
