@@ -1,17 +1,18 @@
 # Overview of PostgreSQL
 
-PostgreSQL is one of the most used open-source DBMS and extremely popular for its features. This is a handnote overview and documentation of PostgreSQL database management system for anyone who wants to start his journey with PostgreSQL. 
+PostgreSQL is one of the most used open-source Database Management System (DBMS) and is extremely popular for its features. This is a handnote overview and documentation of PostgreSQL database management system for anyone who wants to start their journey with PostgreSQL. 
 
 ## What is a database?
 
-A database is a collection of data. Information are stored in database in forms of tables. We want our tables to be redundant. One table might have some kind of relationship with other tables. The type of database system where relations of tables are maintained, are known as relational database system. PostgreSQL is an object-relational database system (not database).
+A database is a collection of data. Information is stored in database in forms of tables. We want our tables to be redundant. One table might have some kind of relationship with other tables. The type of database system where relations of tables are maintained, are known as relational database system. PostgreSQL is an object-relational database system (not database).
 
 ## Database Management System and PostgreSQL
 
 A Database Management System (DBMS) is a system that manages databases where databases can be-
 * stored
-* manipulated or
-* retrieved
+* retrieved and/or
+* manipulated
+
 
 PostgreSQL, also known as Postgres, is an open source object-relational DBMS and has more than 30 years of active development on its core platform. SQL is the language for designing the data manipulation and management. Postgres is popular for its robustness, extensiveness, security, proven-architecture and the dedication of its open-source community developers. It runs on all major operating systems.
 
@@ -86,7 +87,7 @@ If already connected to a user then the following command can be used to connect
 \c database_name
 ```
 
-## Storing, manipulating and retrieving database:
+## Storing, retrieving and manipulating database:
 We are going to use an art store database already designed in [here](https://github.com/Radhima/Art-Store-Database) as a demo. The database in that link is created on Oracle DBMS. Here, a PostgreSQL version of the same database is used.
 
 
@@ -97,6 +98,7 @@ To create a database, the
 ```
 CREATE DATABASE DATABASE_NAME;
 ```
+
 command is passed. (Note to add semi-colon, otherwise the command will not be executed.) 
 
 Then the user should be connected to the database in the way mentioned above.
@@ -119,12 +121,14 @@ Additional Constraints can be added on the table columns. The example of additio
 While inserting data on the table if constraints are not met, then an error message will generate.
 
 The SQL command from [here](https://github.com/Radhima/PostgreSQL/blob/master/tables.sql) was inserted to get the following output:
+
 ![Table creation using constraints](https://user-images.githubusercontent.com/28762555/90130658-a6186d00-dd8c-11ea-8d01-d70e4b828c05.png)
 
 Then if we want to see the created tables we use the command:
     ```/d```
 
 The resultant output when the above commands are inserted is shown here:
+
 ![Tables](https://user-images.githubusercontent.com/28762555/89862146-27270700-dbc9-11ea-94fa-a779f9fec1d5.png)
     
 
@@ -141,11 +145,21 @@ VALUE_OF_COLUMNS_IN_SAME_ORDER)
 
 Here, we see we may not add all columns to insert values. But not null constraints must be maintained. Again we can write column names in any order but values should be in same order as columns. We are using the demo values in [here](https://github.com/Radhima/PostgreSQL/blob/master/insert.sql) for the insertion. An example for the shipping table is shown below:
 
-![Insert output](https://user-images.githubusercontent.com/28762555/89914576-04bbda80-dc17-11ea-83c9-b19d259a5025.png)
+![Insert output](https://user-images.githubusercontent.com/28762555/90228709-8179cf00-de38-11ea-82b1-0f7653990494.png)
 
+When there is a conflict on some columns due to constraints while inserting an `ON CONFLICT DO NOTHING` or `ON CONFLICT DO UPDATE` clause is added. The later is also known as upsert. The command is:
 
-### Manipulating a database
+```
+INSERT INTO TABLE_NAME(
+COLUMN_NAMES_SEPARATED_BY_COMMAS) 
+VALUES (
+VALUE_OF_COLUMNS_IN_SAME_ORDER)
+ON CONFLICT DO CONFLICT_ACTION
+;
 
+```
+
+![on conflict do](https://user-images.githubusercontent.com/28762555/90228447-0c0dfe80-de38-11ea-89c5-87dc77286053.png)
 
 ### Retrieving from a database
 To retrieve from a database we use ``` SELECT``` command. The command with other conditions can successfully retrieve the required data. These are described below:
@@ -276,6 +290,7 @@ Here, `left` keyword is added. We see, null values for table products joining c_
 
 **Full Join:** In this type of join, all records from both the tables are retrieved. Here `Full` keyword is used.
 
+
 #### Aggregate Functions
 
 We have already seen an example of ```COUNT(*)``` before. This is an example of aggregate function. PostgreSQL has several more such functions which makes better retrieval of data based on calculations. A table of the aggregrate functions are given below:
@@ -289,6 +304,47 @@ We have already seen an example of ```COUNT(*)``` before. This is an example of 
 | max(expression) | returns maximum of input values   |
 | min(expression) | returns minimum of input values   |
 | sum(expression) | Sum of all not null input values  |
+
+
+### Manipulating a database
+
+Now comes data manipulation. These can be of different types:
+
+ * Updating record of a table
+ * Deleting records/tables/database etc
+
+#### Updating record of a table:
+
+To update column values of already existed record the following command is used:
+
+```
+    UPDATE table_name
+    SET COLUMN_NAME = NEW_VALUES
+    WHERE CONDITIONS;
+
+```
+
+![update](https://user-images.githubusercontent.com/28762555/90225814-cea77200-de33-11ea-94c0-cf52e15ce04c.png)
+
+#### Deleting records/tables/database
+
+To delete record the command is:
+
+```
+DELETE FROM TABLE
+WHERE CONDITIONS;
+
+```
+
+Tables and Databases can be dropped using:
+
+```
+DROP TABLE TABLE_NAME;
+DROP DATABASE_DATABASE_NAME;
+
+```
+REMEMBER! THIS IS A DANGEROUS COMMAND AS THE INFORMATION IS DELETED FOREVER. SO, MAKE SURE YOU HAVE BACKUP FOR THE DATA BEFORE DELETING!
+
 
 
 
@@ -306,7 +362,7 @@ We have already seen an example of ```COUNT(*)``` before. This is an example of 
 | Command       | Description   | 
 | :---------------------: | :------------------------------------------------------: |
 | help   | Lists important commands |
-| \?     | 	Lists all psql commands    |
+| \\?     | 	Lists all psql commands    |
 | \password ROLE_NAME |  for setting or changing password  |
 | \l |  Lists all databases  |
 | \d |  Lists all relations in a database  |
