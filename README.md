@@ -1,4 +1,4 @@
-# Overview of PostgreSQL
+![postgres](https://github.com/Radhima/PostgreSQL/blob/gh-pages/postgres.png?raw=true)
 
 PostgreSQL is one of the most used open-source Database Management System (DBMS) and is extremely popular for its features. This is a handnote overview and documentation of PostgreSQL database management system for anyone who wants to start their journey with PostgreSQL. 
 
@@ -57,7 +57,7 @@ For adding password separately the following command can be used:
 ```
 Then password and confirmation of password will be asked. Note that, whatever you type in the command will not be shown. The same command can be used for password update as well.
 
-![login](https://user-images.githubusercontent.com/28762555/90152786-08339b00-ddaa-11ea-8da4-9351f3c49e03.png)
+![login](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/role.png)
 
 ## Connecting to DB Server
 
@@ -68,7 +68,7 @@ psql -d database_name -U user_name
 
 ```
 
-![connect1](https://user-images.githubusercontent.com/28762555/90221826-b54ef780-de2c-11ea-92c3-0357f8ebcdea.png)
+![connect1](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/2.png)
 
 For remote login, host and port should also be given:
 
@@ -78,7 +78,7 @@ psql -h host_name -p port_name -U user_name database_name
 
 ```
 
-![connect](https://user-images.githubusercontent.com/28762555/90221385-f09cf680-de2b-11ea-98a1-fcbd67ac711c.png)
+![connect](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/3.png)
 
 DON'T FORGET TO ADD THE BIN PATH OF POSTGRES TO ENVIRONMENT PATH VARIABLE IN ORDER TO RUN ```psql``` COMMAND FROM COMMAND PROMPT!
 
@@ -122,14 +122,14 @@ While inserting data on the table if constraints are not met, then an error mess
 
 The SQL command from [here](https://github.com/Radhima/PostgreSQL/blob/master/tables.sql) was inserted to get the following output:
 
-![Table creation using constraints](https://user-images.githubusercontent.com/28762555/90130658-a6186d00-dd8c-11ea-8d01-d70e4b828c05.png)
+![Table creation using constraints](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/4.png)
 
 Then if we want to see the created tables we use the command:
     ```/d```
 
 The resultant output when the above commands are inserted is shown here:
 
-![Tables](https://user-images.githubusercontent.com/28762555/89862146-27270700-dbc9-11ea-94fa-a779f9fec1d5.png)
+![Tables](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/5.png)
     
 
 #### Inserting in a table
@@ -145,7 +145,7 @@ VALUE_OF_COLUMNS_IN_SAME_ORDER)
 
 Here, we see we may not add all columns to insert values. But not null constraints must be maintained. Again we can write column names in any order but values should be in same order as columns. We are using the demo values in [here](https://github.com/Radhima/PostgreSQL/blob/master/insert.sql) for the insertion. An example for the shipping table is shown below:
 
-![Insert output](https://user-images.githubusercontent.com/28762555/90228709-8179cf00-de38-11ea-82b1-0f7653990494.png)
+![Insert output](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/6.png)
 
 When there is a conflict on some columns due to constraints while inserting an `ON CONFLICT DO NOTHING` or `ON CONFLICT DO UPDATE` clause is added. The later is also known as upsert. The command is:
 
@@ -159,7 +159,7 @@ ON CONFLICT DO CONFLICT_ACTION
 
 ```
 
-![on conflict do](https://user-images.githubusercontent.com/28762555/90228447-0c0dfe80-de38-11ea-89c5-87dc77286053.png)
+![on conflict do](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/7.png)
 
 ### Retrieving from a database
 To retrieve from a database we use ``` SELECT``` command. The command with other conditions can successfully retrieve the required data. These are described below:
@@ -173,19 +173,19 @@ SELECT * FROM TABLE_NAME;
 
 This will output all the data for all columns of all records. For our demo database, the following output is generated:
 
-![select all](https://user-images.githubusercontent.com/28762555/89909810-4a75a480-dc11-11ea-8311-d7dc98cb63fc.png)
+![select all](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/8.png)
 
 
 #### Retrieving selected column records from a single table
 Only required columns are selected for retrieval. The query is:
 
 ```
-SELECT COLUMN_NAMES_SEPERATED_BY_COLUMN FROM TABLE_NAME;
+SELECT COLUMN_NAMES_SEPERATED_BY_COMMAS FROM TABLE_NAME;
 
 ```
 When run on the same product table with selected columns, the generated output is:
 
-![select some](https://user-images.githubusercontent.com/28762555/89909814-4c3f6800-dc11-11ea-8be7-58d80e238456.png)
+![select some](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/9.png)
 
 
 #### Retrieving records based on conditions on column entry
@@ -194,20 +194,20 @@ The ```where``` keyword is used for conditions. The conditions can be comparing,
 
 * Comparing: ```<>```, ```=```, ```<=```, ```>=```, ```<```, ```>``` are used for comparing values. 
 
-![compare](https://user-images.githubusercontent.com/28762555/89909828-4fd2ef00-dc11-11ea-85ce-d25e17fbe621.png)
+![compare](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/10.png)
 
 * Range: ```BETWEEN``` keyword is used for range comparison
 
-![between](https://user-images.githubusercontent.com/28762555/89909821-4ea1c200-dc11-11ea-89ad-e2afc406255b.png)
+![between](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/11.png)
 
 * String Matching: ```LIKE``` and ```ILIKE``` keywords are used. Here ```ILIKE``` is case insensitive. Examples are:
 
-![like](https://user-images.githubusercontent.com/28762555/89909790-45185a00-dc11-11ea-8ec1-d2df9db567b5.png)
-![ilike](https://user-images.githubusercontent.com/28762555/89909843-53ff0c80-dc11-11ea-93a9-7f34fc654160.png)
+![like](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/12.png)
+![ilike](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/13.png)
 
 #### Retrieving records with ```IN```
 When there are multiple conditions, the query becomes too large and is complex and prone to error. ```IN``` keyword reduces the hassle:
-![in](https://user-images.githubusercontent.com/28762555/89909847-5497a300-dc11-11ea-9545-be69ed9a9d06.png)
+![in](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/14.png)
 
 
 #### Retrieving ordered column records
@@ -226,13 +226,13 @@ SELECT COLUMN_NAMES FROM TABLE_NAME ORDER_BY COLUMN_NAMES DESC;
 
 The output for art store database is:
 
-![asc](https://user-images.githubusercontent.com/28762555/89909804-49447780-dc11-11ea-9cb7-06bdcf0a6b43.png)
+![asc](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/15.png)
 
 #### Retrieving distinct entries
 
 The ```distinct``` keyword is used for this.
 
-![distinct](https://user-images.githubusercontent.com/28762555/89909834-52354900-dc11-11ea-9a99-33eb31e00714.png)
+![distinct](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/16.png)
 
 #### Retrieving grouped records with ```GROUP BY``` and ```GROUP BY... HAVING```
 
@@ -250,11 +250,11 @@ HAVING CONDITION;
 Here, ```HAVING``` is used to filter necessary records for better retrieval.:
 
 ###### Two examples using ``` GROUP BY ``` clause are:
-![example](https://user-images.githubusercontent.com/28762555/90130649-a44ea980-dd8c-11ea-94ca-51b002754546.png)
-![example2](https://user-images.githubusercontent.com/28762555/90130653-a4e74000-dd8c-11ea-9017-dfdb5a0c5b7c.png)
+![example](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/17.png)
+![example2](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/18.png)
 
 ###### In this example we add having filter using ```GROUP BY ... HAVING ```:
-![example](https://user-images.githubusercontent.com/28762555/90130646-a31d7c80-dd8c-11ea-8bcc-5adc85e7a7f4.png)
+![example](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/19.png)
 
 REMEMBER, TO USE A COLUMN IN SELECT, YOU MUST HAVE THEM IN GROUP BY CLAUSE OR USE THEM WITHIN AGGREGATE FUNCTION
 
@@ -278,11 +278,11 @@ Postgres is an object-realtional DBMS. Here, two tables may have a relation betw
 
 By default, ```JOIN``` is an inner join. An example is shown below:
 
-![ecample1](https://user-images.githubusercontent.com/28762555/90132122-0dcfb780-dd8f-11ea-906d-4ac9c6e94be6.png)
+![ecample1](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/20.png)
 
 **Left Join:** In this type of join, all records from the left table joined with right table are retrieved. Where record for right table is nil, is kept blank. An example is:
 
-![example2](https://user-images.githubusercontent.com/28762555/90135674-d6fca000-dd94-11ea-908e-d51baffc0a6d.png)
+![example2](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/21.png)
 
 Here, `left` keyword is added. We see, null values for table products joining c_order is shown here.
 
@@ -324,7 +324,7 @@ To update column values of already existed record the following command is used:
 
 ```
 
-![update](https://user-images.githubusercontent.com/28762555/90225814-cea77200-de33-11ea-94c0-cf52e15ce04c.png)
+![update](https://github.com/Radhima/PostgreSQL/blob/master/Screenshots/22.png)
 
 #### Deleting records/tables/database
 
