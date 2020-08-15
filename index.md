@@ -1,4 +1,4 @@
-![postgres](https://developer.ibm.com/wp-content/uploads/sites/85/2016/10/postgres-logo.png)
+![postgres](https://github.com/Radhima/PostgreSQL/blob/gh-pages/postgres.png?raw=true)
 # Overview of PostgreSQL
 
 PostgreSQL is one of the most used open-source Database Management System (DBMS) and is extremely popular for its features. This is a handnote overview and documentation of PostgreSQL database management system for anyone who wants to start their journey with PostgreSQL. 
